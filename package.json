@@ -1,0 +1,43 @@
+{
+  "name": "biblioteca_app",
+  "version": "1.0.0",
+  "description": "Aplicativo de biblioteca desktop com backend embutido",
+  "main": "electron/main.js",
+  "scripts": {
+    "backend:start": "node biblioteca_backend/server.js",
+    "frontend:dev": "cd biblioteca_frontend && npm run dev",
+    "electron:dev": "concurrently \"npm run backend:start\" \"npm run frontend:dev\" \"electron .\"",
+    "frontend:build": "cd biblioteca_frontend && npm run build",
+    "electron:prod": "npm run frontend:build && electron-builder",
+    "start": "electron ."
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "sequelize": "^6.32.1",
+    "sqlite3": "^5.1.6",
+    "cors": "^2.8.5"
+  },
+  "devDependencies": {
+    "electron": "^25.0.0",
+    "electron-builder": "^24.6.0",
+    "concurrently": "^8.2.0"
+  },
+  "build": {
+    "appId": "com.fedj.biblioteca",
+    "productName": "Biblioteca FEDJ",
+    "directories": {
+      "output": "release"
+    },
+    "files": [
+      "biblioteca_frontend/dist/**/*",
+      "biblioteca_backend/**/*",
+      "electron/**/*",
+      "node_modules/**/*",
+      "package.json"
+    ],
+    "win": {
+    "target": "nsis",
+    "icon": "assets/logo.ico"
+  }
+  }
+}
