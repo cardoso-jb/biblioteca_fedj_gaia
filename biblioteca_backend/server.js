@@ -8,10 +8,12 @@ const usuariosRouter = require("./routes/usuarios")
 const cors = require('cors')
 
 const app = express()
-const PORT = 3000
+const PORT = process.env.PORT || 3000
 
 app.use(cors({
-  origin: 'http://localhost:5173', 
+  origin: ['http://localhost:5173',
+            'file://', 
+  ], 
   methods: ['GET', 'POST', 'PATCH'], 
   allowedHeaders: ['Content-Type'], 
 }));

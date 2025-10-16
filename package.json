@@ -12,32 +12,45 @@
     "start": "electron ."
   },
   "dependencies": {
+    "cors": "^2.8.5",
     "express": "^4.18.2",
     "sequelize": "^6.32.1",
-    "sqlite3": "^5.1.6",
-    "cors": "^2.8.5"
+    "sqlite3": "^5.1.6"
   },
   "devDependencies": {
-    "electron": "^25.0.0",
+    "concurrently": "^8.2.0",
+    "electron": "^38.2.2",
     "electron-builder": "^24.6.0",
-    "concurrently": "^8.2.0"
+    "electron-rebuild": "^3.2.9"
   },
   "build": {
-    "appId": "com.fedj.biblioteca",
-    "productName": "Biblioteca FEDJ",
-    "directories": {
-      "output": "release"
-    },
-    "files": [
-      "biblioteca_frontend/dist/**/*",
-      "biblioteca_backend/**/*",
-      "electron/**/*",
-      "node_modules/**/*",
-      "package.json"
-    ],
-    "win": {
+  "appId": "com.fedj.biblioteca",
+  "productName": "Biblioteca FEDJ",
+  "directories": {
+    "output": "release"
+  },
+  "files": [
+    "biblioteca_frontend/dist/**/*",
+    "electron/**/*",
+    "biblioteca_backend/**/*",
+    "node_modules/**/*",
+    "package.json"
+  ],
+  "asarUnpack": [
+    "biblioteca_backend/**/*",
+    "node_modules/**/*"
+  ],
+  "win": {
     "target": "nsis",
     "icon": "assets/logo.ico"
-  }
-  }
+  },
+  "extraResources": [
+    {
+      "from": "biblioteca_backend/",
+      "to": "biblioteca_backend/",
+      "filter": ["**/*"]
+    }
+  ],
+  "npmRebuild": false
+}
 }

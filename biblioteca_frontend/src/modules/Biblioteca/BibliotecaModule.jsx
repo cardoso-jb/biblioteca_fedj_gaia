@@ -42,7 +42,6 @@ function BibliotecaModule({ resetTrigger}) {
       <div className="conteudo">
         {abaInterna === 'emprestar' && (<Emprestar onSucesso={ handleSucesso } />)}
         {abaInterna === 'devolver' && <Devolver onSucesso={ handleSucesso } />}
-        {abaInterna === '' && (<p>Selecione “Emprestar” ou “Devolver” acima.</p>)}
       </div>
       {mensagemGlobal && <p>{mensagemGlobal}</p>}
     </div>

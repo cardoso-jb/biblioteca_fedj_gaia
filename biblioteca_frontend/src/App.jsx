@@ -12,14 +12,21 @@ function App() {
   return (
     <div>
       <nav>
-        <button onClick={() => setAbaAtual('cadastrar')}>Usuários</button>
-        <button onClick={() => setAbaAtual('livros')}>Livros</button>
-        <button onClick={() => setAbaAtual('emprestimo')}>Empréstimo / Devolução</button>
+        <img src="./images/logobranco.png" alt="Logo FEDJ" onClick={() => setAbaAtual('')} />
+        <div class="nav-buttons">
+          <button onClick={() => setAbaAtual('cadastrar')}>Usuários</button>
+          <button onClick={() => setAbaAtual('livros')}>Livros</button>
+          <button onClick={() => setAbaAtual('emprestimo')}>Empréstimo / Devolução</button>
+        </div>
       </nav>
 
       <main>
-        <h1>Biblioteca FEDJ Gaia</h1>
-        <p>Versão 1.0 Teste</p>
+        {abaAtual === '' && (
+          <>
+            <h1>Biblioteca FEDJ Gaia</h1>
+            <p>Versão 1.0 Teste</p>
+          </>
+        )}
         {abaAtual === 'emprestimo' && <BibliotecaModule resetTrigger={true} />}
         {abaAtual === 'cadastrar' && <UsuariosModule />}
         {abaAtual === 'livros' && <LivrosModule />}
