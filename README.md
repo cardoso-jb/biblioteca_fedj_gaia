@@ -58,7 +58,7 @@ Permite o **cadastro, atualização, listagem, busca e exclusão de livros e usu
 ### 1️⃣ Clone o repositório
 
 ```bash
-git clone https://github.com/SEU_USUARIO/BIBLIOTECA_FEDJ_GAIA.git
+git clone https://github.com/cardoso-jb/biblioteca_fedj_gaia
 cd BIBLIOTECA_FEDJ_GAIA
 ```
 
