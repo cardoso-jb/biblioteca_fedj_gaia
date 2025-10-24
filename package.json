@@ -9,7 +9,8 @@
     "electron:dev": "concurrently \"npm run backend:start\" \"npm run frontend:dev\" \"electron .\"",
     "frontend:build": "cd biblioteca_frontend && npm run build",
     "electron:prod": "npm run frontend:build && electron-builder",
-    "start": "electron ."
+    "start": "electron .",
+    "db:reset": "node biblioteca_backend/scripts/resetDatabase.js"
   },
   "dependencies": {
     "cors": "^2.8.5",

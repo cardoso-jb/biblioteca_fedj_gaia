@@ -26,7 +26,7 @@ function ListarTodosLivros() {
       <ul>
         {livros.map(livro => (
           <li key={livro.id}>
-            {livro.titulo} — {livro.autor}
+            {livro.titulo} - {livro.autor} - {livro.codigoDeBarras}
           </li>
         ))}
       </ul>
