@@ -24,7 +24,7 @@ function App() {
         {abaAtual === '' && (
           <>
             <h1>Biblioteca FEDJ Gaia</h1>
-            <p>Versão 1.0 Teste</p>
+            <p>Versão 1.0.0</p>
           </>
         )}
         {abaAtual === 'emprestimo' && <BibliotecaModule resetTrigger={true} />}
